@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.study.mapper.UserMapper">
+	<resultMap id="BaseResultMap" type="com.study.study.dao.User">
+		<result column="id" jdbcType="VARCHAR" property="id"></result>
+		<result column="username" jdbcType="VARCHAR" property="userName"></result>
+		<result column="password" jdbcType="VARCHAR" property="passWord"></result>
+		<result column="realname" jdbcType="VARCHAR" property="realName"></result>
+	</resultMap>
+	
+	<insert id = "inserUser" parameterType="com.study.study.dao.User">
+	 insert into study_user values (#{id}, #{userName}, #{passWord}, #{realName})
+	</insert>
+	<select id = "selectByKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select id,userName,password,realName from study_user where id = #{id}
+	</select>
+</mapper>
