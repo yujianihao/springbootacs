@@ -67,6 +67,19 @@
 			<artifactId>activiti-spring-boot-starter-basic</artifactId>
 			<version>5.21.0</version>
 		</dependency>
+		<!--处理Consider defining a bean of type 'javax.persistence.EntityManagerFactory' in your configuration  -->
+		<dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-spring-boot-starter-jpa</artifactId>
+            <version>5.21.0</version>
+        </dependency>
+        
+        <!--解决依赖冲突，其他间接依赖了两个版本1.0和2.2的，我这里直接依赖1.0-->
+		<dependency>
+			<groupId>javax.persistence</groupId>
+		    <artifactId>persistence-api</artifactId>
+		    <version>1.0</version>
+		</dependency>
 		
 		<!-- junit 测试jar -->
 <!-- 	<dependency>

@@ -18,17 +18,25 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User insertUser() {
-//		User user = new User();
-//		user.setId("3");
-//		user.setPassWord("11111");
-//		user.setUserName("test");
-//		user.setRealName("test");
+		User user = new User();
+		user.setId("1");
+		user.setPassWord("11111");
+		user.setUserName("test");
+		user.setRealName("test");
 		
-//		userMapper.insert(user);
+		userMapper.insert(user);
+		user.setId("2");
+		user.setUserName("test1");
+		user.setRealName("test1");
+		userMapper.insert(user);
+		user.setId("3");
+		user.setUserName("test2");
+		user.setRealName("test2");
+		userMapper.insert(user);
 //		Example example = new Example(User.class);
 //		Criteria criteria = example.createCriteria();
 //		criteria.andEqualTo("id", "1");
-		return userMapper.selectByKey("1");
-		//return user;
+		//return userMapper.selectByKey("1");
+		return user;
 	}
 }
